@@ -20,5 +20,7 @@ exports.botProtection = function(data) {
   }
   const eachCons = require('each-cons');
   let strings = eachCons(data, 3);
-  return new Set(strings).size === strings.length
+  // Remove duplicate entries from two-dimensional array
+  let uniqueStrings = Array.from(new Set(strings.map(JSON.stringify)), JSON.parse);
+  return uniqueStrings.length === strings.length
 }
