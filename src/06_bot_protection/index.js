@@ -22,5 +22,5 @@ exports.botProtection = function(data) {
   let strings = eachCons(data, 3);
   // Remove duplicate entries from two-dimensional array
   let uniqueStrings = Array.from(new Set(strings.map(JSON.stringify)), JSON.parse);
-  return uniqueStrings.length === strings.length
+  return uniqueStrings.length !== strings.length
 }
